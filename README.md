@@ -2,6 +2,16 @@
 
 Package decks provides a simple API for creating and customizing decks of cards in Go.
 
+Check out the [full documentation](https://godoc.org/github.com/joshlore/decks)
+
+[Try it on The Go Playground](https://play.golang.org/p/zJ57UiSWQvg)
+
+## What does it do? (Summary)
+
+This deck package provides a Deck when initialized (default is without Jokers but you can turn that on). Decks are FIFO.
+
+I also provided the funOptions.go for initializing and using methods with different parameters and some helpers.
+
 ## Installation
 
 ```
@@ -10,31 +20,4 @@ go get github.com/joshlore/decks
 
 ## Quickstart
 
-```go
-// get a default, ordered deck of 52 cards
-d, err := decks.New()
-if err != nil {
-  // handle error
-}
-
-// Make sure you specify a random seed before shuffling the deck
-rand.Seed(time.Now().UnixNano())
-
-// Shuffle deck of cards
-d.Shuffle()
-
-// draw cards
-myHand := []decks.Card{}
-myHand = append(myHand, d.Draw())
-myHand = append(myHand, d.Draw())
-
-// print hand
-for _, c := range myHand {
-  fmt.Println(c)git
-}
-
-// discard hand
-d.InsertBottom(myHand)
-```
-
-[Try it on The Go Playground](https://play.golang.org/p/UxA3SAAuWPR)
+[Check out a demostration of the deck package here](https://play.golang.org/p/zJ57UiSWQvg)
